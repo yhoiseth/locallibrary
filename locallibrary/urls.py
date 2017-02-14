@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^catalog/', include('catalog.urls')),
     url(r'^$', RedirectView.as_view(url='/catalog/', permanent=True)),
-    static.static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-]
+
+] + static.static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
