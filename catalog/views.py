@@ -7,7 +7,11 @@ def index(request):
     """
     View function for the homepage
     """
+    number_of_visits = request.session.get('number_of_visits', 0)
+    request.session['number_of_visits'] = number_of_visits + 1
+
     context = {
+        'number_of_visits': number_of_visits,
         'number_of_books': Book.objects.all().count(),
         'number_of_book_instances': BookInstance.objects.all().count(),
         'number_of_available_book_instances':

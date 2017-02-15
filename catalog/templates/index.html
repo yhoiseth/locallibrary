@@ -40,4 +40,6 @@
         {{ number_of_genres_whose_name_contains_phy }}
     </p>
 
+    <p>You have visited this page {{ number_of_visits }}{% if number_of_visits == 1 %} time{% else %} times{% endif %}.</p>
+
 {% endblock %}
